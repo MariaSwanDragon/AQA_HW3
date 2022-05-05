@@ -14,17 +14,17 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CallbackTest {
-    private WebDriver driver;
+public class CallbackTest {
+    WebDriver driver;
 
 
 
     @BeforeAll
-    static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "C:\\QA\\AQA\\HW3v1\\HW3v1\\driver\\win\\chromedriver.exe");
+    public  static void setUpAll() {
+        System.setProperty("webdriver.chrome.driver", "C:\\QA\\AQA\\HW3v1\\driver\\win\\chromedriver.exe");
     }
     @BeforeEach
-    void setUp() {
+    public  void setUp0() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -33,7 +33,7 @@ class CallbackTest {
         driver.get("http://localhost:9999");
     }
     @AfterEach
-    void tearDown() {
+    public  void tearDown() {
         driver.quit();
         driver = null;
     }
